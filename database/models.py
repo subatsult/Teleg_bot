@@ -39,9 +39,7 @@ async def models_main():
         await conn.run_sync(Base.metadata.create_all)
         
         async with async_session() as session:
-            department = Department(name = 'Marketing')
-            session.add(department)
+            rab = Rab(first_name = 'Vice', last_name='Wingman', age = 51, salary= 60000, email = 'captain@gmail.com', phone= 120, address= 'Fire St. 90', department_id= 5)
+            session.add(rab)
             await session.commit()
-            department = Department(name = 'IT')
-            session.add(department)
-            await session.commit()
+        
